@@ -34,7 +34,14 @@ namespace Object.Player
 
         public override bool Damaged(int attackDamage)
         {
-            throw new System.NotImplementedException();
+            healthPoint -= attackDamage;
+            if (healthPoint <= 0)
+            {
+                Dead();
+                return true;
+            }
+
+            return false;
         }
     }
 }
