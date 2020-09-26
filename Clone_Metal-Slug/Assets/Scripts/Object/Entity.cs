@@ -2,25 +2,15 @@
 
 namespace Object
 {
-    public interface IEntity
-    {
-        void Attack();
-        bool Damaged(int attackDamage);
-        void Dead();
-        void Move(float direction);
-        void Jump();
-        void ThrowGrenade();
-    }
-    
-    public class Entity : MonoBehaviour, IEntity
+    public abstract class Entity : MonoBehaviour
     {
         protected int healthPoint;
 
-        void IEntity.Attack() { }
-        void IEntity.ThrowGrenade() { }
-        bool IEntity.Damaged(int attackDamage) { return true; }
-        void IEntity.Dead() { }
-        void IEntity.Move(float direction) { }
-        void IEntity.Jump() { }
+        protected abstract void Attack();
+        protected abstract void ThrowGrenade();
+        protected abstract void Dead();
+        public abstract void Move(float direction);
+        public abstract void Jump();
+        public abstract bool Damaged(int attackDamage);
     }
 }

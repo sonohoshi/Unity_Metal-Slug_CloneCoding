@@ -1,8 +1,6 @@
-﻿using Object;
-
-namespace Object.Enemy
+﻿namespace Object.Enemy
 {
-    public class Enemy : Entity
+    public abstract class Enemy : Entity
     {
         // Start is called before the first frame update
         void Start()
