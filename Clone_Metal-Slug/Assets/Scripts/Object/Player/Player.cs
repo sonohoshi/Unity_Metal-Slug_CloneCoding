@@ -19,7 +19,7 @@ namespace Object.Player
 
         protected override void Dead()
         {
-            throw new System.NotImplementedException();
+            Destroy(gameObject);
         }
 
         public override void Move(float direction)
@@ -35,6 +35,7 @@ namespace Object.Player
         public override bool Damaged(int attackDamage)
         {
             healthPoint -= attackDamage;
+            
             if (healthPoint <= 0)
             {
                 Dead();
