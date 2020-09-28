@@ -17,11 +17,11 @@ public abstract class Weapon : MonoBehaviour
     
     public Weapons WeaponType;
 
-    protected virtual bool Fire()
+    public virtual bool Fire()
     {
         return CheckCanFire();
     } 
-
+    
     public override bool Equals(object other)
     {
         var otherWeapon = other as Weapon;
