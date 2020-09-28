@@ -6,6 +6,7 @@ namespace Object.Player
     {
         private Rigidbody2D rigidbody;
         private readonly float jumpSize;
+        private State<Weapon> currentWeapon;
 
         protected override void Attack()
         {
