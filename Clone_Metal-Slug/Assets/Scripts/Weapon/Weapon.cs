@@ -20,7 +20,7 @@ public abstract class Weapon : MonoBehaviour
     public virtual bool Fire()
     {
         return CheckCanFire();
-    } 
+    }
     
     public override bool Equals(object other)
     {
