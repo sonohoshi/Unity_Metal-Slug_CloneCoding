@@ -4,9 +4,13 @@ namespace Object.Player
 {
     public class Player : Entity
     {
+        public int CountOfGrenade;
+        
         private Rigidbody2D rigidbody;
-        private readonly float jumpSize;
-        private State<Weapon> currentWeapon;
+        private Weapon currentWeapon;
+        private Grenade currentGrenade;
+
+        private static readonly float jumpSize;
 
         protected override void Attack()
         {
