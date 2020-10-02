@@ -12,12 +12,13 @@ public enum Grenades
 public class Grenade : MonoBehaviour
 {
     public Grenades GrenadeType;
+    
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    
+
     public override bool Equals(object other)
     {
         var otherGrenade = other as Grenade;
