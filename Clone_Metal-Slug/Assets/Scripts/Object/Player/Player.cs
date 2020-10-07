@@ -9,6 +9,7 @@ namespace Object.Player
         private Rigidbody2D rigidbody;
         private Weapon currentWeapon;
         private Grenade currentGrenade;
+        private bool isJumping = false;
 
         private static readonly float jumpSize;
 
@@ -34,12 +35,17 @@ namespace Object.Player
 
         public override void Move(float direction)
         {
+            direction = direction > 0 ? 1 : -1;
+            
             transform.Translate(direction, 0, 0);
         }
 
         public override void Jump()
         {
-            rigidbody.AddForce(new Vector2(0, jumpSize));
+            if (!isJumping)
+            {
+                rigidbody.AddForce(new Vector2(0, jumpSize));
+            }
         }
 
         public override bool Damaged(int attackDamage)
