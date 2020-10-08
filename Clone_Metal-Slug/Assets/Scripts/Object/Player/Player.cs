@@ -11,8 +11,13 @@ namespace Object.Player
         private Grenade currentGrenade;
         private bool isJumping = false;
 
-        private static readonly float jumpSize;
+        private static readonly float jumpSize = 50f;
 
+        void Start()
+        {
+            rigidbody = GetComponent<Rigidbody2D>();
+        }
+        
         void Update()
         {
             

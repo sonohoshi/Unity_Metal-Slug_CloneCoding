@@ -22,11 +22,19 @@ public class InputManager : MonoBehaviour
     private KeyCode? GetInput()
     {
         var horizontalMoving = Input.GetAxis("Horizontal");
+        KeyCode? input = null;
         if (horizontalMoving != 0)
         {
-            var input = horizontalMoving > 0 ? KeyCode.RightArrow : KeyCode.LeftArrow;
+            input = horizontalMoving > 0 ? KeyCode.RightArrow : KeyCode.LeftArrow;
             player.Move(horizontalMoving);
         }
-        return null;
+
+        if (Input.GetKey(KeyCode.X))
+        {
+            Debug.Log("Input X");
+            player.Jump();
+        }
+        
+        return input;
     }
 }
